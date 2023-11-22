@@ -1,0 +1,155 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    height: 40%;
+    background-color: #f1b63b;
+    text-align: center;
+    border-bottom-right-radius: 16%;
+}
+.header .title{
+    margin: 30px 0;
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff;
+}
+.nav-list{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+.nav-list .item{
+    position: relative;
+}
+.nav-list a{
+    color: #feecd1;
+}
+.nav-list .active::after{
+    content: '';
+    display: block;
+    height: 4px;
+    width: 24px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -10px;
+    left: 4px;
+}
+.banner img{
+    width: 90%;
+    transform: translate(0,30px);
+    border-radius: 15px;
+}
+.icon-list{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.icon-list .item div{
+    width: 26px;
+    line-height: 26px;
+    margin: 0 auto;
+    background-color: #fa8a5c;
+    border-radius: 20px;
+}
+.icon-list .item:nth-child(2) div{
+    background-color: #5a7efd;
+}
+.icon-list .item:nth-child(3) div{
+    background-color: #fecd20;
+}
+.icon-list .item:nth-child(4) div{
+    background-color: #2bbcfd;
+}
+.icon-list .item:nth-child(5) div{
+    background-color: #ff8856;
+}
+.icon-list .item div i {
+    color: #fff;
+}
+.icon-list .item span{
+    font-size: 14px;
+    color: #444444;
+}
+.content{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.list{
+    width: 46%;
+}
+.list p {
+    margin: 5px 0 10px 0;
+    padding: 0 15px;
+    line-height: 16px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #3b3b3b;
+}
+.list img{
+    width: 100%;
+    border-radius: 10px;
+}
+.list .bottom img{
+    width: 21px;
+    height: 21px;
+}
+.list .bottom{
+    display: flex;
+    align-items: center;
+}
+.list .bottom span{
+    font-size: 14px;
+    color: #8b8b8b;
+}
+.list .bottom .name{
+    flex: 1;
+}
+.list .bottom span:last-child{
+    font-size: 12px;
+}
+.main{
+    flex: 1;
+    overflow-y: auto;
+}
+
+
+
+
+/* 底部 */
+.footer{
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.footer div{
+    width: 18%;
+    
+}
+.footer div i{
+    font-size: 28px;
+    margin: 5px 0;
+}
+.footer div i,
+.footer div span {
+    color: #d5a16c;
+}
+.footer div span{
+    display: block;
+    font-size: 12px;
+}

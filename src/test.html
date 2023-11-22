@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复习</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, red, yellow);
+            margin: 100px auto;
+            transform: scale(1.5) rotate(100deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CSS3 -->
+    <!-- 线性渐变 -->
+    <div class="box"></div>
+
+    <script>
+
+
+        // let arr = [1,2,31,23,124,124,51,5,11,2,31];
+        // function unique(arr) {
+        //     var res = arr.filter(function (item, index, array) {
+        //         return array.indexOf(item) === index
+        //     })
+        //     return res
+        // }
+        // let res = unique(arr);
+        // console.log(res);
+
+
+
+        // 4.数组降序排序 let arr=[3,5,6,8,54,323,123,43,76,4342,342]（不能用sort方法）  由大到小
+        // 如果第一项小于第二项就让他们替换位置,以此类推
+        // let arr = [3, 5, 6, 8, 54, 323, 123, 43, 76, 4342, 342];
+        // // 外循环是控制总体需要比较多少轮
+        // for (let i = 0; i < arr.length - 1; i++) {
+        //     for (let j = 0; j < arr.length - 1 - i; j++) {
+        //         if (arr[j] > arr[j + 1]) {
+        //             let temp = arr[j];
+        //             arr[j] = arr[j + 1];
+        //             arr[j + 1] = temp;
+        //         }
+        //     }
+        // }
+        // console.log(arr.reverse());
+
+        // 浅拷贝  一层  修改数据
+        // let arr = [1, 2, 3];
+        // let arr1 = [4, 5, 6];
+        // let newArr = arr.concat(arr1);
+        // newArr[0] = 100;
+        // console.log(arr)
+        // console.log(arr1)
+        // console.log(newArr)
+
+        // 多层 修改地址
+        // let arr = [[1, 2, 3]];
+        // let arr1 = [[4, 5, 6]];
+        // let newArr = arr.concat(arr1);
+        // newArr[0][0] = 100;
+        // console.log(arr)
+        // console.log(arr1)
+        // console.log(newArr)
+
+        // 只要是引用数据类型修改的都是地址
+        // let arr = [{ name: '孙悟空' },{age:10}];
+        // let arr1 = [{ name: '猪八戒' },{age:20}];
+        // let newArr = arr.concat(arr1);
+        // newArr[2].name = '唐僧';
+        // console.log(arr)
+        // console.log(arr1)
+        // console.log(newArr)
+
+        // 深拷贝  拷贝多少层都是基本数据类型  不会改变原来的数据
+        // let arr = [[{ name: '孙悟空', age: 18 }, { name: '白骨精', age: 20 }], [{ name: '牛魔王', age: '21' }]];
+        // let newArr = JSON.parse(JSON.stringify(arr));  //转换为字符串  开辟了一个新的栈空间
+        // newArr[0][1].name = '唐僧';
+        // newArr[1][0].name = '沙僧';
+        // console.log(arr);
+        // console.log(newArr);
+
+        // call  apply  bind 改变this的指向
+        // 要借的对象.要借的函数.call(借给谁,参数1,参数2...)
+        // 要借的对象.要借的函数.apply(借给谁,[参数1,参数2])
+        // let fn = 要借的对象.要借的函数.bind(借给谁,参数1,参数2)  需要调用
+        // let obj = {
+        //     name: '孙悟空',
+        //     age: '100',
+        //     set: function (name) {
+        //         console.log(this.name);
+        //     }
+        // }
+        // let obj2 = {
+        //     name: '沙僧',
+        //     age: 18,
+        //     get: function () {
+        //         console.log(this.age)
+        //     }
+        // }
+
+        /**
+         * axios
+        */
+        // Promise.resolve().then(() => {
+        //     console.log(0);
+        //     return Promise.resolve(4);
+        // }).then((res) => {
+        //     console.log(res)
+        // })
+
+        // Promise.resolve().then(() => {
+        //     console.log(1);
+        // }).then(() => {
+        //     console.log(2);
+        // }).then(() => {
+        //     console.log(3);
+        // }).then(() => {
+        //     console.log(5);
+        // }).then(() => {
+        //     console.log(6);
+        // })
+
+        //axios 封装 
+        // function axios(url, data) {
+        //     return new Promise((resolve, reject) => {
+        //         //ajax请求
+        //         $http.get(url, data, res => {
+        //             resolve(res.data)
+        //         })
+        //     })
+        // }
+        // //{id} 函数的解构赋值===res.id
+        // axios('./data.json', {}).then(({ id }) => axios('./data1.json', { id }))
+        //     .then(({ name }) => axios('./data2.json', { name }))
+        //     .then(({ tell }) => axios('./data3.json', { tell }))
+        //     .then(res => console.log(res))
+    </script>
+</body>
+
+</html>

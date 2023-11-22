@@ -1,0 +1,1 @@
+require('../css/good_products.css');

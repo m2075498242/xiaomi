@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./utils/util.js"></script>
+</head>
+
+<body>
+</body>
+<script>
+    // let f = function (s) {
+    //     return s.replace(/-\w/g, function (x) {
+    //         return x.slice(1).toUpperCase();
+    //     })
+    // }
+    // var s1 = "get-element-by-id";
+    // console.log(f(s1));
+
+    function Device(ford, efficiency) {
+        // console.log(this);
+        this.ford = ford;
+        this.efficiency = efficiency;
+    }
+    let device = new Device('220v', '一级');
+
+    function Lamp(color, ford, efficiency) {
+        this.color = color;
+        // 子类继承父类属性
+        Device.call(this, ford, efficiency)
+    }
+    Lamp.prototype.open = () => '灯开了';
+    Lamp.prototype.close = () => '灯关了';
+    /* 原型链继承   子类继承父类方法    属性继承
+     方法继承  子类的原型对象的__proto__ = 父类的prototype
+    */
+    Lamp.prototype.__proto__ = Device.prototype;
+    let lamp = new Lamp('白色', '220v', '二级')
+    // console.log(lamp);
+    // console.log(device);
+
+
+
+    /**
+     * 人类
+     * 学生
+     * 小学生
+     */
+
+    // function Person(name, color) {
+    //     this.name = name;
+    //     this.color = color;
+    // }
+    // Person.prototype.eat = () => '我正在吃饭';
+    // Person.prototype.sleep = () => '我正在睡觉';
+
+    // function Students(work, name, color) {
+    //     this.work = work;
+    //     Person.call(this, name, color)
+    // }
+    // Students.prototype.study = () => '好好学生,天天向上';
+    // Students.prototype.__proto__ = Person.prototype;
+
+    // function SizeStu(age, work, name, color) {
+    //     this.age = age;
+    //     Students.call(this, work, name, color);
+    // }
+    // SizeStu.prototype.beaten = () => '天天挨打';
+    // SizeStu.prototype.__proto__ = Students.prototype;
+    // // let sizeStu = new SizeStu('唐僧', '白色', '取经', 20);
+    // let sizeStu = new SizeStu(20, '唐僧', '白色', '取经');
+    // console.log(sizeStu);
+
+
+    /**
+     * 组合寄生继承
+    */
+    //    function Person(name, color) {
+    //         this.name = name;
+    //         this.color = color;
+    //     }
+    //     Person.prototype.eat = () => '我正在吃饭';
+    //     Person.prototype.sleep = () => '我正在睡觉';
+
+    //     function Students(work, name, color) {
+    //         this.work = work;
+    //         Person.call(this, name, color)
+    //     }
+    //     Students.prototype.study = () => '好好学生,天天向上';
+    //     Students.prototype.__proto__ = Person.prototype;
+
+    //     function SizeStu(age, work, name, color) {
+    //         this.age = age;
+    //         Students.call(this, work, name, color);
+    //     }
+    //     SizeStu.prototype.beaten = () => '天天挨打';
+    //     SizeStu.prototype.__proto__ = Students.prototype;
+
+
+    // ES6类的继承
+    class Person {
+        // 构造器
+        constructor(name, color) {
+            this.name = name;
+            this.color = color;
+        }
+        // 
+        eat() {
+            return '我正在吃饭！';
+        }
+        sleep() {
+            return '我正在睡觉！';
+        }
+    }
+    class Students extends Person {
+        // 构造器
+        constructor(work, name, color) {
+            super(name, color);
+            this.work = work;
+        }
+        study() {
+            return '好好学习,天天向上';
+        }
+    }
+    class SizeStu extends Students {
+        // 构造器
+        constructor(age, work, name, color) {
+            super(work, name, color);
+            this.age = age;
+        }
+        beaten() {
+            return '天天挨打';
+        }
+    }
+    let person = new Person('唐僧', '黑色');
+    let students = new Students('吃肉', '唐僧', '白色');
+    let sizeStu = new SizeStu(18, '取经', '唐僧', '黑色');
+
+
+    let user = {
+        n1: 1,
+        n2: 2,
+        n3: 3,
+        n4: 4,
+        n5: 5,
+        n6: 6,
+    }
+    // 解构赋值
+    let { n6, n1, n2, n4, n5, n3 } = user;
+    // let sum = n1 + n2 + n3 + n4 + n5 + n6;
+    console.log(n6);
+    let sum = 0;
+    for (let k in user) {
+        console.log();
+        sum += user[k];
+    }
+    console.log(sum);
+    // 寄生组合继承
+
+    class Big {
+
+    }
+
+    class In {
+
+
+    }
+    class Size {
+
+    }
+
+
+</script>
+
+</html>
